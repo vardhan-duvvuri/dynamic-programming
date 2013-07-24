@@ -42,18 +42,28 @@ for i in range(n-2,-1,-1):
             else:
                 d[i][j]=val3
                 w[i][j]=j+1
-print p
-print d
-print w
-print "Max Profit of the last left cell is : "
-print d[0][0]
+
+s=int(raw_input("Enter the cell to find max. profit : "))
+for i in p:
+    print i
+print ""
+print ""
+for i in d:
+    print i
+print ""
+print ""
+for i in w:
+    print i
+print ""
+print ""
+print "Max Profit of that cell is : "
+print d[0][s]
 def parent(w,i,j):
     if i!=n-1:
-        print w[i][j]
-        print '^'
-        print '|'
+        print w[i][j],
+        print '<-----',
         parent(w,i+1,w[i][j])
     else:
         exit
 print "The path for that cell is : "
-parent(w,0,0)
+parent(w,0,s)
